@@ -111,7 +111,7 @@ function(GIT_EXTERNAL DIR REPO tag)
         WORKING_DIRECTORY "${DIR}" OUTPUT_QUIET)
       execute_process(COMMAND "${GIT_EXECUTABLE}" submodule deinit CMake/common
         WORKING_DIRECTORY "${DIR}" OUTPUT_QUIET ERROR_QUIET)
-      execute_process(COMMAND "${GIT_EXECUTABLE}" submodule update --recursive
+      execute_process(COMMAND "${GIT_EXECUTABLE}" submodule update --init --recursive
         WORKING_DIRECTORY "${DIR}")
     endif()
   endif()
